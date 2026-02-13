@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI HTML Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        main {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+        button {
+            padding: 10px 15px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e2e2e2;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AI HTML Generator</h1>
+    </header>
+    <main>
+        <h2>Enter Your HTML Template</h2>
+        <textarea id="input" rows="10" style="width: 100%;"></textarea>
+        <button onclick="generateHTML()">Generate HTML</button>
+        <h2>Generated Output</h2>
+        <div id="output"></div>
+    </main>
+    <footer>
+        <p>&copy; 2026 AI HTML Generator</p>
+    </footer>
+    <script>
+        function generateHTML() {
+            const input = document.getElementById('input').value;
+            document.getElementById('output').innerText = input;
+        }
+    </script>
+</body>
+</html>
