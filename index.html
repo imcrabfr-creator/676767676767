@@ -3,68 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI HTML Generator</title>
+    <title>Dark Mode Chat AI Generator</title>
     <style>
         body {
+            background-color: #121212;
+            color: #e0e0e0;
             font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 20px;
-            background: #f4f4f4;
         }
-        header {
-            background: #007BFF;
-            color: white;
-            padding: 10px 20px;
+        .container {
             text-align: center;
         }
-        main {
-            margin: 20px 0;
-            padding: 20px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            color: #666;
-        }
-        button {
-            padding: 10px 15px;
-            background: #28a745;
-            color: white;
+        input[type=text] {
+            width: 300px;
+            padding: 10px;
             border: none;
             border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #6200ea;
+            color: white;
             cursor: pointer;
         }
-        #output {
-            margin-top: 20px;
-            padding: 10px;
-            background: #e2e2e2;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            white-space: pre-wrap;
+        button:hover {
+            background-color: #3700b3;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>AI HTML Generator</h1>
-    </header>
-    <main>
-        <h2>Enter Your HTML Template</h2>
-        <textarea id="input" rows="10" style="width: 100%;"></textarea>
+    <div class="container">
+        <h1>Chat AI HTML Generator</h1>
+        <input type="text" id="htmlContent" placeholder="Enter your HTML content...">
         <button onclick="generateHTML()">Generate HTML</button>
-        <h2>Generated Output</h2>
-        <div id="output"></div>
-    </main>
-    <footer>
-        <p>&copy; 2026 AI HTML Generator</p>
-    </footer>
+        <div id="result"></div>
+    </div>
     <script>
         function generateHTML() {
-            const input = document.getElementById('input').value;
-            document.getElementById('output').innerText = input;
+            const content = document.getElementById('htmlContent').value;
+            const newWindow = window.open();
+            newWindow.document.write(content);
+            newWindow.document.close();
         }
     </script>
 </body>
